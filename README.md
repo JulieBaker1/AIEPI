@@ -64,5 +64,5 @@ The patient-shared gene module can be used to cluster malignant epithelial cells
 epithelial_adata = cell_state_identification(epithelial_adata)
 ```
 
-![clustering.png](inst/clustering.png =100x100)
+![clustering.png](inst/clustering.png){:height="50%" width="50%"}
 
