@@ -56,7 +56,7 @@ In the second step, we distinguish the patient-shared GM from the patient-specif
 GM_classification_result = GM_classification(epithelial_downsample_adata)
 ```
 <div align=center> 
-<img src="./inst/IQR.png" width = "300"  alt="IQR.png" align=center />
+<img src="./inst/IQR.png" width = "300"  alt="IQR.png">
 <div> 
 
 ## Downstream analysis
@@ -68,6 +68,6 @@ epithelial_adata = cell_state_identification(epithelial_adata)
 ```
 
 <div align=center> 
-<img src="./inst/clustering.png" width = "300" alt="clustering.png" align=center />
+<img src="./inst/clustering.png" width = "300" alt="clustering.png">
 <div> 
 
