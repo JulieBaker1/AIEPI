@@ -47,8 +47,8 @@ cnmf_obj.k_selection_plot(close_fig=False)
 
 
 
-Step2: gene program classification
--------------
+## Step2: gene program classification
+
 
 In the second step, we distinguish the patient-shared GM from the patient-specific GM by a permutation test p-value.  
 
@@ -59,8 +59,8 @@ GM_classification_result = GM_classification(epithelial_downsample_adata)
 <img src="./inst/IQR.png" width = "300"  alt="IQR.png" align=center />
 <div> 
 
-Downstream analysis
--------------------------------------------------
+## Downstream analysis
+
 The patient-shared gene module can be used to cluster malignant epithelial cells. Besides, you can define the state of each cell by the GM with highest GM score.
 
 ```
