@@ -38,7 +38,7 @@ sample_number = 500
 weighted_sample = downsampling(epithelial_adata.obs,sample_number)
 epithelial_downsample_adata = epithelial_adata[weighted_sample.index,]
 ```
-AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K. The detailed code can be obtained in [GM_identification.ipynb]("./code/1.GM_identification.ipynb").
+AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K. The detailed code can be obtained in [GM_identification.ipynb]("code/1.GM_identification.ipynb").
 
 <div align=center> 
 <img src="./inst/Epithelial.k_selection.png" width = "300" alt="Epithelial.k_selection.png">
@@ -60,7 +60,7 @@ GM_classification_result = GM_classification(patient_GM_score_23GM_100genes)
 
 ## Downstream analysis
 
-We can define the state of each cell by the GM with highest GM score. The code can be obtained in [cell_state_assignment.ipynb]("./code/3.cell_state_assignment.ipynb").
+We can define the state of each cell by the GM with highest GM score. The code can be obtained in [cell_state_assignment.ipynb]("code/3.cell_state_assignment.ipynb").
 
 
 <div align=center> 
