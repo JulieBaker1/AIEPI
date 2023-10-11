@@ -33,16 +33,16 @@ For malignant epithelial cell number vary among patients, we sample the same cel
 
 ```
 epithelial_downsample_adata = sampling(epithelial_adata)
-
 ```
-
 AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K.
 ```
 gene_program = GM_identification(epithelial_downsample_adata) (# output the default error and stability curve)
 cnmf_obj.k_selection_plot(close_fig=False)
 ```
 
-![Epithelial.k_selection.png](inst/Epithelial.k_selection.png)
+<img src="./inst/Epithelial.k_selection.png" width = "300" height = "200" alt="Epithelial.k_selection.png" align=center />
+
+
 
 
 Step2:gene program classification
@@ -54,7 +54,8 @@ In the second step, we distinguish the patient-shared GM from the patient-specif
 GM_classification_result = GM_classification(epithelial_downsample_adata)
 ```
 
-![IQR.png](inst/IQR.png)
+<img src="./inst/IQR.png" width = "300" height = "200" alt="IQR.png" align=center />
+
 
 Downstream analysis
 -------------------------------------------------
@@ -63,6 +64,6 @@ The patient-shared gene module can be used to cluster malignant epithelial cells
 ```
 epithelial_adata = cell_state_identification(epithelial_adata)
 ```
+<img src="./inst/clustering.png" width = "300" height = "200" alt="clustering.png" align=center />
 
-![clustering.png](inst/clustering.png){:height="50%" width="50%"}
 
