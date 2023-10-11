@@ -28,19 +28,18 @@ Quick start
 Here, we provide an example data of [GBC_epithelial](http://lifeome.net/software/hrg/GBC_epithelial.h5ad) 
 from 10X Genomics. Users can download it and run following scripts to understand the workflow of AIEPI.
 
-Step1: gene program identification
-------------------
+## Step1: gene program identification
 
 For malignant epithelial cell number vary among patients, we sample the same cell number from every patient so that they are equally weighted.
 
 ```
-epithelial_downsample_adata = sampling(epithelial_adata)
+import AI_EPI
+sample_number = 500
+weighted_sample = downsampling(epithelial_adata.obs,sample_number)
+epithelial_downsample_adata = epithelial_adata[weighted_sample.index,]
 ```
-AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K.
-```
-gene_program = GM_identification(epithelial_downsample_adata) (# output the default error and stability curve)
-cnmf_obj.k_selection_plot(close_fig=False)
-```
+AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K.The detailed code can be obtained in [GM_identification.ipynb]("./code/1.GM_identification.ipynb")
+
 <div align=center> 
 <img src="./inst/Epithelial.k_selection.png" width = "300" alt="Epithelial.k_selection.png">
 </div> 
@@ -48,11 +47,12 @@ cnmf_obj.k_selection_plot(close_fig=False)
 
 ## Step2: gene program classification
 
-
 In the second step, we distinguish the patient-shared GM from the patient-specific GM by a permutation test p-value.  
 
 ```
-GM_classification_result = GM_classification(epithelial_downsample_adata)
+source("code/2.GM_classification.R")
+patient_GM_score_23GM_100genes = read.csv("./data/patient_GM_score_23GM_100genes.csv",row.names = 1)
+GM_classification_result = GM_classification(patient_GM_score_23GM_100genes)
 ```
 <div align=center> 
 <img src="./inst/IQR.png" width = "300"  alt="IQR.png">
@@ -60,13 +60,10 @@ GM_classification_result = GM_classification(epithelial_downsample_adata)
 
 ## Downstream analysis
 
-The patient-shared gene module can be used to cluster malignant epithelial cells. Besides, you can define the state of each cell by the GM with highest GM score.
+The patient-shared gene module can be used to cluster malignant epithelial cells. Besides, you can define the state of each cell by the GM with highest GM score. The code can be obtained in [cell_state_assignment.ipynb]("./code/3.cell_state_assignment.ipynb")
 
-```
-epithelial_adata = cell_state_identification(epithelial_adata)
-```
 
 <div align=center> 
-<img src="./inst/clustering.png" width = "300" alt="clustering.png">
+<img src="./inst/cell_state.png" width = "300" alt="cell_state.png">
 </div> 
 
