@@ -42,9 +42,8 @@ gene_program = GM_identification(epithelial_downsample_adata) (# output the defa
 cnmf_obj.k_selection_plot(close_fig=False)
 ```
 <div align=center> 
-<img src="./inst/Epithelial.k_selection.png" width = "300"  alt="Epithelial.k_selection.png">
-<div> 
-
+<img src="./inst/Epithelial.k_selection.png" width = "300" alt="Epithelial.k_selection.png">
+</div> 
 
 
 ## Step2: gene program classification
@@ -57,7 +56,7 @@ GM_classification_result = GM_classification(epithelial_downsample_adata)
 ```
 <div align=center> 
 <img src="./inst/IQR.png" width = "300"  alt="IQR.png">
-<div> 
+</div> 
 
 ## Downstream analysis
 
@@ -69,5 +68,5 @@ epithelial_adata = cell_state_identification(epithelial_adata)
 
 <div align=center> 
 <img src="./inst/clustering.png" width = "300" alt="clustering.png">
-<div> 
+</div> 
 
