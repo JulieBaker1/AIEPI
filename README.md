@@ -58,25 +58,11 @@ GM_classification_result = GM_classification(epithelial_downsample_adata)
 
 Downstream analysis
 -------------------------------------------------
+The patient-shared gene module can be used to cluster malignant epithelial cells. Besides, you can define the state of each cell by the GM with highest GM score.
 
--   obj:an Seurat object
--   dims:the dimentions of PCA used to construct SNN.(10 by default)
--   nfeatures:the number of features for downstream analysis.(2000 by
-    default)
--   overlap\_stop:when the overlap come to this number, iterate will
-    stop.(0.75 by default)
--   snn:the neighborhood relationship that is calculated in advance.
--   max\_iteration:the max iteration times
--   neigh\_num:number of neighbors
--   is.save:whether to save intermediate results
--   dir:the save directory
+```
+epithelial_adata = cell_state_identification(epithelial_adata)
+```
 
-example:
-
-        # find regional distributed genes
-        pbmc=FindRegionalGenes(pbmc,dims = 1:10,nfeatures = 2000,overlap_stop = 0.95)
-        # the featureplot of the 2 most highly regional genes
-        FeaturePlot(pbmc,head(RegionalGenes(pbmc), 2))
-
-![featureplot.png](https://github.com/JulieBaker1/HighlyRegionalGenes/blob/master/images/featureplot.png)
+![clustering.png](inst/clustering.png)
 
