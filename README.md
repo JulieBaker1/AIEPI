@@ -8,3 +8,14 @@ method mainly contains two steps:
 -   gene program classification
 
 ![workflow.png](inst/workflow.png)
+
+Installation
+------------
+
+the package can be installed directly from the github.
+
+git clone Juliebaker1/AIEPI
+cd AIEPI
+
+Quick start
+-----------
