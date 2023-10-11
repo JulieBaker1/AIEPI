@@ -40,7 +40,7 @@ gene_program = GM_identification(epithelial_downsample_adata) (# output the defa
 cnmf_obj.k_selection_plot(close_fig=False)
 ```
 
-<img src="./inst/Epithelial.k_selection.png" width = "300" height = "200" alt="Epithelial.k_selection.png" align=center />
+<img src="./inst/Epithelial.k_selection.png" width = "300"  alt="Epithelial.k_selection.png" align=center />
 
 
 
@@ -54,7 +54,7 @@ In the second step, we distinguish the patient-shared GM from the patient-specif
 GM_classification_result = GM_classification(epithelial_downsample_adata)
 ```
 
-<img src="./inst/IQR.png" width = "300" height = "200" alt="IQR.png" align=center />
+<img src="./inst/IQR.png" width = "300"  alt="IQR.png" align=center />
 
 
 Downstream analysis
@@ -64,6 +64,6 @@ The patient-shared gene module can be used to cluster malignant epithelial cells
 ```
 epithelial_adata = cell_state_identification(epithelial_adata)
 ```
-<img src="./inst/clustering.png" width = "300" height = "200" alt="clustering.png" align=center />
+<img src="./inst/clustering.png" width = "300" alt="clustering.png" align=center />
 
 
