@@ -10,7 +10,7 @@ def HighlyRegionalGenes():
     return()
 
 
-def cnmf():
+def GM_idendification():
     return()
 
 # input adata

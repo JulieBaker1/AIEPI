@@ -7,7 +7,9 @@ method mainly contains two steps:
 -   gene module identification
 -   gene module classification
 
-![workflow.png](inst/workflow.png)
+<div align=center> 
+<img src="./inst/workflow.png" alt="workflow.png">
+</div> 
 
 Installation
 ------------
@@ -26,7 +28,7 @@ Quick start
 Here, we provide an example data of [GBC_epithelial](http://lifeome.net/software/hrg/GBC_epithelial.h5ad) 
 from 10X Genomics. Users can download it and run following scripts to understand the workflow of AIEPI.
 
-Step1:gene program identification
+Step1: gene program identification
 ------------------
 
 For malignant epithelial cell number vary among patients, we sample the same cell number from every patient so that they are equally weighted.
@@ -39,13 +41,13 @@ AI-EPI identifies gene modules by consensus non-negative matrix factorization (c
 gene_program = GM_identification(epithelial_downsample_adata) (# output the default error and stability curve)
 cnmf_obj.k_selection_plot(close_fig=False)
 ```
+<div align=center> 
+<img src="./inst/Epithelial.k_selection.png" width = "300"  alt="Epithelial.k_selection.png">
+<div> 
 
-<img src="./inst/Epithelial.k_selection.png" width = "300"  alt="Epithelial.k_selection.png" align=center />
 
 
-
-
-Step2:gene program classification
+Step2: gene program classification
 -------------
 
 In the second step, we distinguish the patient-shared GM from the patient-specific GM by a permutation test p-value.  
@@ -53,9 +55,9 @@ In the second step, we distinguish the patient-shared GM from the patient-specif
 ```
 GM_classification_result = GM_classification(epithelial_downsample_adata)
 ```
-
+<div align=center> 
 <img src="./inst/IQR.png" width = "300"  alt="IQR.png" align=center />
-
+<div> 
 
 Downstream analysis
 -------------------------------------------------
@@ -64,6 +66,8 @@ The patient-shared gene module can be used to cluster malignant epithelial cells
 ```
 epithelial_adata = cell_state_identification(epithelial_adata)
 ```
-<img src="./inst/clustering.png" width = "300" alt="clustering.png" align=center />
 
+<div align=center> 
+<img src="./inst/clustering.png" width = "300" alt="clustering.png" align=center />
+<div> 
 
