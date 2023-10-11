@@ -33,30 +33,31 @@ For malignant epithelial cell number vary among patients, we sample the same cel
 
 ```
 epithelial_downsample_adata = sampling(epithelial_adata)
-gene_program = GM_identification(epithelial_downsample_adata) (# output the default error and stability curve)
 
 ```
+
+AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K.
+```
+gene_program = GM_identification(epithelial_downsample_adata) (# output the default error and stability curve)
+cnmf_obj.k_selection_plot(close_fig=False)
+```
+
+![Epithelial.k_selection.png](inst/Epithelial.k_selection.png)
+
+
 Step2:gene program classification
 -------------
 
 In the second step, we distinguish the patient-shared GM from the patient-specific GM by a permutation test p-value.  
 
 ```
-
+GM_classification_result = GM_classification(epithelial_downsample_adata)
 ```
 
-![elbow.png](inst/IQR.png)
+![IQR.png](inst/IQR.png)
 
 Downstream analysis
 -------------------------------------------------
-
-To ensure our neighborhood relationship is accurate, we use newly found
-features to construct SNN again and again until the overlap between the
-newly found features and the previous features comes to overlap\_stop,
-0.75 by default. If you pursue efficiency and don’t want the iteration,
-just set overlap\_stop 0. You can find specific details [here]().
-
-the parameter that user can define.
 
 -   obj:an Seurat object
 -   dims:the dimentions of PCA used to construct SNN.(10 by default)

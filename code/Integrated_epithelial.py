@@ -21,7 +21,7 @@ def score_cell(method):
 
 # input cell GM score patient
 # output patient specific GM
-def GM_filter():
+def GM_classification():
     return()
 
 # input gene list
