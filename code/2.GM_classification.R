@@ -33,7 +33,7 @@ GM_classification <- function(celltype_info,premutation_time = 500){
     for(iGM in paste0("score_GM",GM_index)){
       data_analysis = celltype_info[,c(iGM,"orig.ident_new")]
       colnames(data_analysis) = c("GM","orig.ident_new")
-      score_summary = setDT(data_analysis)[,list(Mean=mean(GM), Max=max(GM), Min=min(GM), Median=as.numeric(median(GM)), Std=sd(GM)), by=orig.ident_new]
+      data.table::score_summary = setDT(data_analysis)[,list(Mean=mean(GM), Max=max(GM), Min=min(GM), Median=as.numeric(median(GM)), Std=sd(GM)), by=orig.ident_new]
       score_summary = as.data.frame(score_summary)
       rownames(score_summary) = score_summary[,"orig.ident_new"]
       sample_score[rownames(score_summary),iGM] = score_summary[,"Mean"]
