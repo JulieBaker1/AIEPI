@@ -7,7 +7,7 @@ GM_classification <- function(celltype_info,premutation_time = 500){
   
   for(iGM in 1:K){
     score_temp = celltype_info[,paste0('score_GM',iGM)]
-    celltype_info.loc[,paste0('score_GM',iGM)] = (score_temp-min(score_temp))/(max(score_temp)-min(score_temp))
+    celltype_info[,paste0('score_GM',iGM)] = (score_temp-min(score_temp))/(max(score_temp)-min(score_temp))
   }
   orig.ident = lapply(rownames(celltype_info),
                       FUN = function(i){
@@ -66,7 +66,7 @@ GM_classification <- function(celltype_info,premutation_time = 500){
   patient_shares = names(score_pvalue[score_pvalue<=0.05])
   patient_shares = gsub("score_GM","",patient_shares)
   patient_shares = as.numeric(patient_shares)
-  write.csv(score_pvalue,paste0("pvalue_score_",program_num,"GM_",ngenes,"genes.csv"))  
-  write.csv(patient_shares,paste0("pvalue_patient_shared_state_",program_num,"GM_",ngenes,"genes.csv")) 
+  write.csv(score_pvalue,paste0("pvalue_score_",program_num,".csv"))  
+  write.csv(patient_shares,paste0("pvalue_patient_shared_state_",program_num,".csv")) 
 }
 
