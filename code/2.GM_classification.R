@@ -2,6 +2,7 @@ GM_classification <- function(celltype_info,premutation_time = 500){
   ## niormalize the score 
   program_num = ncol(celltype_info)
   K = ncol(celltype_info)
+  program_score = matrix(0,nrow = K,ncol = premutation_time+1)
   colnames(celltype_info) = paste0("score_GM",1:program_num)
   
   for(iGM in 1:K){
