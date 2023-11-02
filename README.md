@@ -23,10 +23,10 @@ pip install requirement.txt
 Quick start
 -----------
 
-Here, we provide an example data of [GBC_epithelial](https://cloud.tsinghua.edu.cn/f/f13f462c11804d2f9302/?dl=1) 
+Here, we provide an example data of [GBC_epithelial](https://cloud.tsinghua.edu.cn/f/f13f462c11804d2f9302/?dl=1 ) 
 from 10X Genomics. Users can download it and run following scripts to understand the workflow of AIEPI.
 
-## Step1: gene program identification
+## Step1: gene module identification
 
 For malignant epithelial cell number vary among patients, we sample the same cell number from every patient so that they are equally weighted.
 
@@ -43,7 +43,7 @@ AI-EPI identifies gene modules by consensus non-negative matrix factorization (c
 </div> 
 
 
-## Step2: gene program classification
+## Step2: gene module classification
 
 In the second step, we distinguish the patient-shared GM from the patient-specific GM by a permutation test p-value.  
 
