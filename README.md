@@ -23,7 +23,7 @@ pip install requirement.txt
 Quick start
 -----------
 
-Here, we provide an example data of [GBC_epithelial](https://cloud.tsinghua.edu.cn/f/f13f462c11804d2f9302/?dl=1) from 10X Genomics. Users can download it and run following scripts to understand the workflow of AIEPI.
+Here, we provide an example data of [GBC_epithelial](http://lifeome.net/supp/gbc/Single%20cell/Epithelial/adata_adeno_P.h5ad) from 10X Genomics. Users can download it and run following scripts to understand the workflow of AIEPI.
 
 ## Step1: gene module identification
 
@@ -35,7 +35,7 @@ sample_number = 500
 weighted_sample = downsampling(epithelial_adata.obs,sample_number)
 epithelial_downsample_adata = epithelial_adata[weighted_sample.index,]
 ```
-AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K. The down-sampled data of the exampled data can be obtained in [downsampled_data](https://cloud.tsinghua.edu.cn/f/8f90aa56e43c4c5d8a87/?dl=1).The detailed gene module identification code based on down-sampled data can be obtained in [GM_identification.ipynb](https://github.com/JulieBaker1/AIEPI/blob/main/code/1.GM_identification.ipynb).
+AI-EPI identifies gene modules by consensus non-negative matrix factorization (cNMF). You can select a appropriate pragram number by the curve of stability and error at each choice of K. The down-sampled data of the exampled data can be obtained in [downsampled_data](http://lifeome.net/supp/gbc/Single%20cell/Epithelial/adata_adeno_p_sample.h5ad).The detailed gene module identification code based on down-sampled data can be obtained in [GM_identification.ipynb](https://github.com/JulieBaker1/AIEPI/blob/main/code/1.GM_identification.ipynb).
 
 <div align=center> 
 <img src="./inst/Epithelial.k_selection.png" width = "300" alt="Epithelial.k_selection.png">
